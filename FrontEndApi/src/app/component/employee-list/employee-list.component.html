@@ -1,0 +1,35 @@
+<!--Implementar a view do componente-->
+<div class="container">
+    <div class="col-md-12">
+        <div *ngIf="employeeList != 0; else noData">
+            <h3>{{ titleComp }}</h3>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Data</th>
+                        <th scope="col">Executar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let items of employeeList">
+                        <td>{{ items.id }}</td>
+                        <td>{{ items.Name }}</td>
+                        <td>{{ items.Date }}</td>
+                        <button class="btn btn-outline-primary btn-sm" routerLink="/employee-update/{{ items.id }}">Editar</button>
+                        <button class="btn btn-outline-secondary btn-sm" routerLink="/employee-unique/{{ items.id }}">Exibir</button>
+                        <button class="btn btn-outline-danger btn-sm" (click)="delemployeeRegister(items.id)">Excluir</button>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!--criar uma mini view (ng-template) que sera usado quando nao houver dados para recuperar-->
+    <ng-template #noData>
+        <div class="text-center">
+            <p>Cadastro não encontrado! Por favor insira um novo.</p>
+        </div>
+        <button class="btn btn-outline-primary " routerLink="/employee-insert">Criar novo Cadastro</button>
+    </ng-template>
+</div>

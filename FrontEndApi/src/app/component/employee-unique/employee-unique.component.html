@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="col-md-12">
+        <div *ngIf="employeeUniqueRegister !=0; else noRegister">
+            <h3>{{ titleComp }}</h3>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Data</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{ employeeUniqueRegister.id }}</td>
+                        <td>{{ employeeUniqueRegister.Name }}</td>
+                        <td>{{ employeeUniqueRegister.Date }}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+        <ng-template #noRegister>
+            <div class="text-center">
+                <p>Nenhum Registro foi identificado! Crie um novo, clicando no botão abaixo.!</p>
+                <button class="btn btn-outline-primary" routerLink="/employee-insert">Criar Registro</button>
+            </div>
+        </ng-template>
+    </div>
+</div>

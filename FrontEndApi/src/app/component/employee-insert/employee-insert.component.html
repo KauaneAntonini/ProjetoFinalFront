@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="col-md-12">
+        <h3>{{ titleComp }}</h3>
+        <div class="form-group">
+            <input type="text" [(ngModel)] = "insertRegister.name" placeholder="Informe seu nome" class="form-control" />
+        </div>
+        <div class="form-group">
+            <input type="number" [(ngModel)] = "insertRegister.date" placeholder="Data de registro" class="form-control" />
+        </div>
+        <div class="form-group">
+            <button class="btn btn-success btn-lg panel-body" (click) ="insertOneregister()">Salvar Registro</button>
+        </div>
+    </div>
+</div>
